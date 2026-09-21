@@ -1,6 +1,17 @@
 #!/bin/bash
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
-python3 "$DIR/scripts/update_music.py"
 cd "$DIR"
-git commit -am "🎵 update currently playing music" 2>/dev/null && git push origin main 2>/dev/null
-echo "✨ Profile music card updated & pushed to GitHub!"
+
+# Run update python script
+python3 "$DIR/scripts/update_music.py"
+
+# Only commit and push if the card actually changed
+if ! git diff --quiet assets/spotify-card.svg; then
+    git add assets/spotify-card.svg
+    git commit -m "🎵 auto-update currently playing track"
+    git push origin main
+    echo "✨ Successfully synced new track to GitHub!"
+else
+    echo "No track change detected."
+fi

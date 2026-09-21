@@ -10,10 +10,14 @@ def get_spotify_macos():
     script = """
     tell application "Spotify"
         if it is running then
-            set trackName to name of current track
-            set trackArtist to artist of current track
-            set trackArtwork to artwork url of current track
-            return trackName & "|||" & trackArtist & "|||" & trackArtwork
+            try
+                set trackName to name of current track
+                set trackArtist to artist of current track
+                set trackArtwork to artwork url of current track
+                return trackName & "|||" & trackArtist & "|||" & trackArtwork
+            on error
+                return ""
+            end try
         end if
     end tell
     """
@@ -29,18 +33,30 @@ def get_spotify_macos():
 def main():
     info = get_spotify_macos()
     if not info:
-        print("Spotify is not currently playing or track could not be retrieved.")
         return
 
     track_name, artist_name, artwork_url = info
-    print(f"🎵 Now Playing: {track_name} by {artist_name}")
+    card_path = os.path.join(os.path.dirname(__file__), "..", "assets", "spotify-card.svg")
+
+    # Quick check if card already shows this track to avoid redundant work
+    if os.path.exists(card_path):
+        try:
+            with open(card_path, "r", encoding="utf-8") as f:
+                content = f.read()
+                if f">{track_name}<" in content and f">{artist_name}<" in content:
+                    print("Track unchanged, skipping.")
+                    return
+        except Exception:
+            pass
+
+    print(f"🎵 Updating to: {track_name} by {artist_name}")
 
     cover_bytes = b""
     if artwork_url:
         try:
             ctx = ssl._create_unverified_context()
             req = urllib.request.Request(artwork_url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, context=ctx) as resp:
+            with urllib.request.urlopen(req, context=ctx, timeout=5) as resp:
                 cover_bytes = resp.read()
         except Exception as e:
             print(f"Warning: Could not fetch artwork: {e}")
@@ -51,7 +67,6 @@ def main():
         thumb_path = "/tmp/spotify_art_thumb.jpg"
         with open(raw_path, "wb") as f:
             f.write(cover_bytes)
-        # Use macOS native sips to create an optimized crisp thumbnail
         subprocess.run(["sips", "-Z", "180", raw_path, "--out", thumb_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         if os.path.exists(thumb_path):
             with open(thumb_path, "rb") as f:
@@ -119,10 +134,9 @@ def main():
   </g>
 </svg>"""
 
-    card_path = os.path.join(os.path.dirname(__file__), "..", "assets", "spotify-card.svg")
     with open(card_path, "w", encoding="utf-8") as f:
         f.write(svg)
-    print("✅ assets/spotify-card.svg updated with current track and artwork!")
+    print(f"Updated card to: {track_name}")
 
 if __name__ == "__main__":
     main()
