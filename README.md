@@ -4,7 +4,6 @@
 [![GitHub Stars](https://img.shields.io/github/stars/kodzyfox?label=Total%20Stars&style=flat-square&color=gold)](https://github.com/kodzyfox)
 [![Public Repos](https://img.shields.io/badge/Repos-Public-informational?style=flat-square&color=blueviolet)](https://github.com/kodzyfox?tab=repositories)
 [![Telegram](https://img.shields.io/badge/Telegram-@kodzy-2CA5E0?style=flat-square&logo=telegram&logoColor=white)](https://t.me/kodzy)
-[![Spotify](https://img.shields.io/badge/Spotify-Listening-1DB954?style=flat-square&logo=spotify&logoColor=white)](https://open.spotify.com)
 
 Projects listed here are my hobby projects that I build in my free time for fun. I'm a vibecoder actively pairing with AI agents to bring ideas to life and create cool things. Currently I'm exploring **native macOS & Apple Silicon apps**, **real-time audio DSP & visualizers**, **decentralized peer-to-peer networking**, and **creative tech experiments**. Expect most of my code to be AI agent & LLM assisted.
 
@@ -40,8 +39,9 @@ Interactive 3D WebGL simulation combining the *Drosophila melanogaster* connecto
 
 ## 🎧 Soundtrack & Vibe
 
-<!-- Spotify dynamic player widget (optional Vercel hookup) -->
-[![Spotify](https://novatorem.vercel.app/api/spotify)](https://open.spotify.com)
+<a href="https://open.spotify.com">
+  <img src="https://raw.githubusercontent.com/kodzyfox/kodzyfox/main/assets/spotify-card.svg" alt="Listening on Spotify" />
+</a>
 
 ---
 
