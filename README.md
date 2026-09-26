@@ -15,6 +15,14 @@ Projects listed here are my hobby projects that I build in my free time for fun.
 
 ## Featured Projects
 
+### <img src="https://raw.githubusercontent.com/kodzyfox/VitalsDeck/main/docs/screenshots/AppIcon.png" width="22" height="22" valign="bottom" /> [VitalsDeck](https://github.com/kodzyfox/VitalsDeck) — Cyberpunk Hardware Telemetry & Floating HUD for macOS
+[![Swift](https://img.shields.io/badge/Swift-6.0-FA7343?style=flat-square&logo=swift&logoColor=white)](https://swift.org)
+[![macOS](https://img.shields.io/badge/macOS-Native-black?style=flat-square&logo=apple&logoColor=white)](https://apple.com)
+[![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-M1--M4-orange?style=flat-square)](https://github.com/kodzyfox/VitalsDeck)
+[![CPU Usage](https://img.shields.io/badge/CPU-%3C%200.6%25-brightgreen?style=flat-square)](https://github.com/kodzyfox/VitalsDeck)
+
+Lightweight retro-cyberpunk hardware monitor for macOS. Live Apple Silicon CPU & GPU temperatures in the menu bar, ASCII telemetry gauges, floating HUD overlay, 1-click process terminator, caffeine mode, and 5 aesthetic themes.
+
 ### <img src="https://raw.githubusercontent.com/kodzyfox/AURA/main/native/Aura/Resources/AppIcon.png" width="22" height="22" valign="bottom" /> [AURA](https://github.com/kodzyfox/AURA) — Native macOS Ambient Music Companion & Ambilight Visualizer
 [![Swift](https://img.shields.io/badge/Swift-5.9+-FA7343?style=flat-square&logo=swift&logoColor=white)](https://swift.org)
 [![macOS](https://img.shields.io/badge/macOS-Native-black?style=flat-square&logo=apple&logoColor=white)](https://apple.com)
