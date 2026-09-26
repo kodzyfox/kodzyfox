@@ -20,6 +20,7 @@ Projects listed here are my hobby projects that I build in my free time for fun.
 [![macOS](https://img.shields.io/badge/macOS-Native-black?style=flat-square&logo=apple&logoColor=white)](https://apple.com)
 [![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-M1--M4-orange?style=flat-square)](https://github.com/kodzyfox/VitalsDeck)
 [![CPU Usage](https://img.shields.io/badge/CPU-%3C%200.6%25-brightgreen?style=flat-square)](https://github.com/kodzyfox/VitalsDeck)
+[![Website](https://img.shields.io/badge/Website-Live%20Demo-ffb300?style=flat-square&logo=safari&logoColor=black)](https://kodzyfox.github.io/VitalsDeck/)
 
 Lightweight retro-cyberpunk hardware monitor for macOS. Live Apple Silicon CPU & GPU temperatures in the menu bar, ASCII telemetry gauges, floating HUD overlay, 1-click process terminator, caffeine mode, and 5 aesthetic themes.
 
