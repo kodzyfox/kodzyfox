@@ -24,7 +24,7 @@
     <text x="18" y="10" class="brand">SPOTIFY NOW PLAYING</text>
   </g>
 
-  <text x="110" y="55" class="track">I Can Drive</text>
+  <text x="110" y="55" class="track">You're Lost</text>
   <text x="110" y="76" class="artist">Lil Uzi Vert</text>
 
   <g transform="translate(110, 93)">
